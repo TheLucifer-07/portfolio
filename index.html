@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemachandu (Chandu) | AI & DS Student Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+    <header >
+        <nav data-aos="fade-down">
+            <h2>Portfolio</h2>
+                <div>
+                    <ol id="menu-overlay">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#aboutme">AboutMe</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ol>
+                    <div><p><a href="Resume.pdf">DownloadResume</a></p></div>
+                </div>
+        </nav>   
+        </div>
+    </header>
+    <div class="mobile-nav" data-aos="fade-down"> 
+        <div class="mobile-overlay" onclick="toggleMenu()"></div>
+        <nav>
+        <h2>Portfolio</h2> 
+        <div class="right-items">
+        <div class="resume"><p><a href="Resume.pdf">DownloadResume</a></p></div>
+        <div class="menu" onclick="toggleMenu()">☰</div>
+        </div>
+        <ol id="mobile-menu" class="sidebar">
+            <li class="close-menu" onclick="toggleMenu()">x</li>        
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#aboutme">AboutMe</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="mobile-theme">Theme</li>
+            <ul class="mobile-theme-options">
+                <li class="mobile-theme-option">Light</li>
+                <li class="mobile-theme-option ">Dark</li>
+                <li class="mobile-theme-option ">Gradient</li>
+            </ul>
+        </ol>
+        </nav>
+    </div>
+    <section class="welcome" id="home" data-aos="flip-down" >
+        <div class="welcome-content">
+            <h1>Welcome to My Portfolio</h1>
+            <h3>Hey, It's me <span class="highlight">Chandu</span></h3>
+            <h2>And I'm a <span class="highlight" id="dynamic-role">Web Developer</span></h2>
+            <div class="getintouch">
+                <a href="#contact" class="btn">Get in Touch</a>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/hemachandu-animireddy" target="_blank" aria-label="LinkedIn" >
+                    <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:hemachanduanimireddy@gmail.com" target="_blank" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://x.com/chandux_" target="_blank" aria-label="Twitter" >                
+                    <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://github.com/TheLucifer-07" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="welcome-image" >
+            <img src="images/myimage.png" alt="Portrait of Chandu,">
+        </div>
+    </section>
+    <div data-aos="flip-down" class="about">
+    <section class="aboutme" id="aboutme" >
+        <h2>About Me</h2>
+        <div class="aboutme-div">
+        <div class="aboutme-image">
+            <img src="images/myimage.png" alt="HemaChandu Animireddy" id="aboutme-img">
+        </div>
+        <div class="aboutme-info">
+            <p>Hi! I’m <b>HemaChandu Animireddy</b>, a B.Tech second-year student specializing in Artificial Intelligence and Data Science.</p>
+            <p>I have a solid understanding of <b>Java, HTML, CSS, and JavaScript</b>, I’m passionate about building interactive and user-friendly web applications.</p>
+            <p>Alongside web development, I’m deeply interested in Artificial Intelligence and Machine Learning, and I enjoy exploring how intelligent systems can solve real-world problems.</p>   
+            <p>I’m constantly learning, experimenting, and looking for opportunities to enhance my skills and contribute to meaningful projects in the fields of Web Development and AI/ML.</p>
+        </p>
+        <button><a href="#skills">View MySkills</a></button>
+        <button><a href="#projects">View MyProjects</a></button>
+        </div>
+        </div>
+    </section>
+    </div>
+    <section class="myskills" id="skills" data-aos="zoom-out-up">
+        <h2>My Sklls</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <img src="images/java.PNG" alt="JAVA">
+                <span>JAVA</span>
+            </div>
+            <div class="skill">
+                <img src="images/html.png" alt="HTML">
+                <span>HTML</span>
+            </div>
+            <div class="skill">
+                <img src="images/css.png" alt="CSS">
+                <span>CSS</span>
+            </div>
+            <div class="skill">
+                <img src="images/js.png" alt="JS">
+                <span>JS</span>
+            </div>
+        </div>
+    </section>
+    <section class="myprojects" id="projects" data-aos="flip-up">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <div class="project" data-aos="flip-up">
+                <img src="images/heritage-hub.png" alt="Heritage-Hub">
+                <h3>Heritage Hub</h3>
+                <p>A platform to explore global cultural heritage with a focus on India’s traditions.</p>
+                <div>
+                <button><a href="https://heritage-hub-143.vercel.app">Live Demo</a></button>
+                <button><a href="https://github.com/TheLucifer-07/Heritage_Hub">Source Code</a></button>
+                </div>
+            </div>
+           <div class="project" data-aos="flip-up">
+                <img src="images/styra.png" alt="Sty-Ra">
+                <h3>StyRa</h3>
+                <p>A modern e-commerce website for cloth's featuring elegant design and responsive layouts.</p>
+                <div>
+                <button><a href="https://sty-ra-silk.vercel.app">Live Demo</a></button>
+                <button><a href="https://github.com/TheLucifer-07/StyRa">Source Code</a></button>
+                </div>
+            </div>
+            <div class="project" data-aos="flip-up">
+                <img src="images/goal-wise.png" alt="Goal-Wise">
+                <h3>Goal Wise</h3>
+                <p>A productivity and goal-tracking website to help users stay focused and organized.</p>
+                <div>
+                <button><a href="https://goal-wise.vercel.app">Live Demo</a></button>
+                <button><a href="https://github.com/TheLucifer-07/goal-wise">Source Code</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="contact-div">
+    <section class="contact" id="contact" data-aos="zoom-in">
+        <h2> Get in Touch </h2>
+        <div>
+            <div class="social-icons">
+                    <div>
+                    <a href="https://www.linkedin.com/in/hemachandu-animireddy" target="_blank" aria-label="LinkedIn" >
+                    <i class="fab fa-linkedin"></i></a>
+                    <p>Hemachandu animireddy</p>
+                    </div>
+                    <div>
+                    <a href="mailto:hemachanduanimireddy@gmail.com" target="_blank" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                    </a>
+                    <p>hemachanduanimireddy@gmail.com</p>
+                    </div>
+                    <div>
+                    <a href="https://x.com/chandux_" target="_blank" aria-label="Twitter" >                
+                    <i class="fab fa-twitter"></i>
+                    </a>
+                    <p>chanduX_</p>
+                    </div>
+                    <div>
+                    <a href="https://github.com/TheLucifer-07" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                    </a>
+                    <p>TheLucifer-07</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+    </div>
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, 
+    easing: 'ease-in-out', 
+    once: true, 
+  });
+</script>
+</body>
+</html>
