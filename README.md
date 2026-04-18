@@ -46,16 +46,39 @@ Git • GitHub • Vite • Vercel
 
 ## 📂 Project Structure
 
-src/
-├── components/
-|
-├── pages/
-|
-├── assets/
-|
-├── App.jsx
-|
-└── main.jsx
+portfolio/
+├── public/                      # Static assets
+│   ├── Hema_Chandu_Resume.pdf
+│   ├── favicon.svg
+│   └── icons.svg
+│
+├── src/                         # Main source code
+│   ├── components/              # Reusable UI components
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Skills.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Contact.jsx
+│   │   └── Footer.jsx
+│   │
+│   ├── pages/                   # Page structure
+│   │   └── Home.jsx
+│   │
+│   ├── assets/                  # Images & media
+│   │   ├── aqi.png
+│   │   ├── edunexes.png
+│   │   ├── shopeasy.png
+│   │   └── my-photo.PNG
+│   │
+│   ├── App.jsx                  # Root component
+│   ├── main.jsx                 # Entry point
+│   └── index.css                # Global styles
+│
+├── tailwind.config.js           # Tailwind configuration
+├── vite.config.js               # Vite configuration
+├── package.json                 # Dependencies
+└── README.md
 
 ---
 
