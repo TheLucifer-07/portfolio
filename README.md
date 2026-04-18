@@ -48,9 +48,13 @@ Git • GitHub • Vite • Vercel
 
 src/
 ├── components/
+|
 ├── pages/
+|
 ├── assets/
+|
 ├── App.jsx
+|
 └── main.jsx
 
 ---
