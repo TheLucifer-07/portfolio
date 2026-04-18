@@ -13,10 +13,14 @@
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </div>
+
 ---
+
 ## 🚀 Live Demo
 🔗 https://portfolio-3005.vercel.app
+
 ---
+
 ## 👋 About This Project
 A modern, responsive portfolio website built to showcase my work, skills, and projects.
 ### ✨ Highlights
@@ -24,8 +28,10 @@ A modern, responsive portfolio website built to showcase my work, skills, and pr
 - Smooth animations and transitions  
 - Fully responsive (mobile-first)  
 - Clean and scalable architecture  
-- Resume integration  
+- Resume integration
+
 ---
+
 ## 🛠️ Tech Stack
 ### Frontend
 React • Tailwind CSS • JavaScript  
@@ -34,8 +40,10 @@ Node.js • Express.js
 ### Database
 MongoDB • Firebase  
 ### Tools
-Git • GitHub • Vite • Vercel  
+Git • GitHub • Vite • Vercel 
+
 ---
+
 ## 📂 Project Structure
 
 src/
@@ -46,6 +54,7 @@ src/
 └── main.jsx
 
 ---
+
 ## 📌 Featured Projects
 ### 🌍 AQI Predictor
 - AI-powered air quality prediction platform  
