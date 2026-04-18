@@ -62,7 +62,7 @@ function About() {
         <div className="flex justify-center order-1 md:order-2 mt-2 md:mt-0">
           <div className="relative group">
             <img
-              src="/src/assets/my-photo.PNG"
+              src="../assets/my-photo.PNG"
               alt="Hema Chandu"
               className="w-72 h-96 md:w-80 md:h-[460px] object-cover object-top rounded-2xl shadow-[0_50px_120px_rgba(139,94,60,0.25)] transition duration-500 group-hover:scale-[1.04]"
             />
