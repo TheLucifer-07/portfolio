@@ -65,15 +65,20 @@ src/
 - Chat, notes generation, resume analysis  
 - Gemini API integration  
 ### 🛒 ShopEasy
-- Responsive e-commerce UI built with Tailwind CSS  
+- Responsive e-commerce UI built with Tailwind CSS
+
 ---
 ## 📄 Resume
 👉 [View Resume](/public/Hema_Chandu_Resume.pdf)
+
 ---
+
 ## 🚀 Version History
 - **v1.0** – Initial portfolio  
-- **v2.0** – Complete redesign with improved UI/UX, animations, and projects  
+- **v2.0** – Complete redesign with improved UI/UX, animations, and projects
+  
 ---
+
 ## 📫 Connect With Me
 <div align="center">
   <a href="https://www.linkedin.com/in/hemachandu-animireddy/">
@@ -86,7 +91,9 @@ src/
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </div>
+
 ---
+
 <div align="center">
   <p><i>"Code is where logic meets creativity."</i></p>
   <p><b>⭐ Star this repo if you like it</b></p>
