@@ -1,33 +1,40 @@
-# 🌐 Portfolio Website (v2)
-A modern, responsive portfolio website showcasing my work, skills, and projects as a Full Stack Developer & AI/Data Science student.
+<div align="center">
+  <h1>🌐 Portfolio Website (v2)</h1>
+  <h3>Hemachandu Animireddy</h3>
+  <p>Full-Stack Developer | AI & Data Science Student</p>
+  <p>Building scalable applications and solving real-world problems with clean UI & performance</p>
+  <a href="https://www.linkedin.com/in/hemachandu-animireddy/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="mailto:hemachanduanimireddy@gmail.com">
+    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a href="https://github.com/TheLucifer-07">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</div>
 ---
 ## 🚀 Live Demo
-🔗 https://your-portfolio-link.com
+🔗 https://portfolio-3005.vercel.app
 ---
-## 👨‍💻 About Me
-Full Stack Developer passionate about building scalable web applications and AI-powered solutions with a focus on clean UI, performance, and real-world impact.
+## 👋 About This Project
+A modern, responsive portfolio website built to showcase my work, skills, and projects.
+### ✨ Highlights
+- Premium UI/UX design  
+- Smooth animations and transitions  
+- Fully responsive (mobile-first)  
+- Clean and scalable architecture  
+- Resume integration  
 ---
 ## 🛠️ Tech Stack
-**Frontend**
-- React
-- Tailwind CSS
-- JavaScript
-**Backend**
-- Node.js
-- Express.js
-**Database**
-- MongoDB
-- Firebase
-**Other Tools**
-- Git & GitHub
-- Vite
----
-## ✨ Features
-- Responsive design (mobile-first)
-- Smooth scrolling & animations
-- Modern UI/UX with premium design
-- Interactive sections (About, Skills, Projects, Contact)
-- Resume download/view functionality
+### Frontend
+React • Tailwind CSS • JavaScript  
+### Backend
+Node.js • Express.js  
+### Database
+MongoDB • Firebase  
+### Tools
+Git • GitHub • Vite • Vercel  
 ---
 ## 📂 Project Structure
 
@@ -39,32 +46,40 @@ src/
 └── main.jsx
 
 ---
-## 📌 Projects Highlighted
+## 📌 Featured Projects
 ### 🌍 AQI Predictor
-- AI-powered air quality prediction platform
-- LSTM-based forecasting
-- Real-time dashboards and analytics
+- AI-powered air quality prediction platform  
+- LSTM-based forecasting  
+- Real-time dashboards & analytics  
 ### 🤖 EduNexes
-- AI-powered student productivity platform
-- Chat, notes generation, resume analysis
-- Gemini API integration
+- AI-powered student productivity system  
+- Chat, notes generation, resume analysis  
+- Gemini API integration  
 ### 🛒 ShopEasy
-- Responsive e-commerce UI built with Tailwind CSS
+- Responsive e-commerce UI built with Tailwind CSS  
 ---
 ## 📄 Resume
-You can view my resume here:  
-👉 [View Resume](./public/Hema_Chandu_Resume.pdf)
----
-## 🔗 Connect With Me
-- GitHub: https://github.com/TheLucifer-07  
-- LinkedIn: https://linkedin.com/in/hemachandu-animireddy  
-- Portfolio: https://your-portfolio-link.com  
+👉 [View Resume](/public/Hema_Chandu_Resume.pdf)
 ---
 ## 🚀 Version History
 - **v1.0** – Initial portfolio  
-- **v2.0** – Complete redesign with improved UI/UX and project showcase  
+- **v2.0** – Complete redesign with improved UI/UX, animations, and projects  
 ---
-## ⭐ If you like this project
-Give it a ⭐ on GitHub!
+## 📫 Connect With Me
+<div align="center">
+  <a href="https://www.linkedin.com/in/hemachandu-animireddy/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="mailto:hemachanduanimireddy@gmail.com">
+    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a href="https://github.com/TheLucifer-07">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</div>
 ---
+<div align="center">
+  <p><i>"Code is where logic meets creativity."</i></p>
+  <p><b>⭐ Star this repo if you like it</b></p>
+</div>
 
