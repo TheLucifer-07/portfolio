@@ -7,30 +7,23 @@ import Skills from "../components/Skills";
 function Home() {
   return (
     <div>
-      
-      {/* Hero Section */}
       <Hero />
 
-      {/* About Section */}
-      <section id="about" className="section">
+      <section id="about">
         <About />
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="section">
+      <section id="skills">
         <Skills />
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="section">
+      <section id="projects">
         <Projects />
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="section">
+      <section id="contact">
         <Contact />
       </section>
-
     </div>
   );
 }

@@ -38,10 +38,8 @@ function Footer() {
   ];
 
   return (
-    <footer className="border-t border-black/10 py-10 px-6 bg-background">
-      <div className="max-w-7xl mx-auto flex flex-col items-center gap-6">
-
-        {/* Social Icons */}
+    <footer className="relative border-t border-[rgba(139,94,60,0.12)] bg-[rgba(255,255,255,0.55)] px-6 py-10 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-6">
         <div className="flex flex-wrap justify-center gap-4">
           {socials.map((item, index) => (
             <a
@@ -49,12 +47,12 @@ function Footer() {
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full bg-white/70 backdrop-blur-md border border-accent/20 hover:bg-[#8B7355] hover:scale-110 transition-all duration-300 group"
+              className="social-pill group"
             >
               {item.type === "mail" ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 text-primary/70 group-hover:text-white"
+                  className="h-5 w-5 text-primary/70 group-hover:text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -70,21 +68,18 @@ function Footer() {
                 <img
                   src={item.icon}
                   alt={item.name}
-                  className="w-5 h-5 object-contain filter grayscale group-hover:grayscale-0"
+                  className="h-5 w-5 object-contain grayscale group-hover:grayscale-0"
                 />
               )}
             </a>
           ))}
         </div>
 
-        {/* Divider */}
-        <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-accent/40 to-transparent"></div>
+        <div className="h-px w-32 bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
 
-        {/* Copyright */}
-        <p className="text-sm text-primary/70 text-center">
+        <p className="text-center text-sm text-primary/70">
           © {new Date().getFullYear()} Chandu. All rights reserved.
         </p>
-
       </div>
     </footer>
   );

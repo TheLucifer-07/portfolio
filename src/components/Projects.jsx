@@ -7,7 +7,7 @@ const projects = [
     title: "AQI Predictor",
     description:
       "AI-powered air quality prediction platform using ML models, real-time APIs, and interactive dashboards.",
-    tag: "Full Stack • AI",
+    tag: "Full Stack • ML",
     link: "https://aqi-predictor-07.vercel.app",
     github: "https://github.com/TheLucifer-07/AQI-Predictor",
     image: aqiImg,
@@ -16,12 +16,13 @@ const projects = [
       { name: "Node", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
       { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
     ],
+    accent: "from-[rgba(139,94,60,0.12)] via-[rgba(181,144,103,0.08)] to-transparent",
   },
   {
     title: "EduNexes",
     description:
       "AI-powered student productivity system with chat, notes generation, resume analysis, and task tracking.",
-    tag: "Full Stack • AI",
+    tag: "Full Stack",
     link: "https://edu-nexes.vercel.app",
     github: "https://github.com/TheLucifer-07/EduNexes",
     image: edunexesImg,
@@ -30,6 +31,7 @@ const projects = [
       { name: "Node", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
       { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
     ],
+    accent: "from-[rgba(181,144,103,0.12)] via-[rgba(139,94,60,0.08)] to-transparent",
   },
   {
     title: "ShopEasy",
@@ -44,89 +46,142 @@ const projects = [
       { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
       { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
     ],
+    accent: "from-[rgba(181,144,103,0.10)] via-[rgba(139,94,60,0.06)] to-transparent",
   },
 ];
 
 function Projects() {
-  return (
-    <section className="relative w-full min-h-screen py-20 overflow-hidden flex flex-col justify-center bg-gradient-to-br from-[#dacdb8] via-[#EFE4D8] to-[#e0cebb]">
-       {/* Premium Gradient Background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#FAFAFA] via-[#F6F1EC] to-[#d1baa0]"></div>
-      <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-accent/20 blur-[180px] rounded-full"></div>
+  const handleTilt = (event) => {
+    const card = event.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `perspective(1200px) rotateX(${(-y * 4).toFixed(2)}deg) rotateY(${(x * 4).toFixed(2)}deg) translateY(-8px)`;
+  };
 
-      
-      {/* Heading */}
-      <div className="max-w-5xl mx-auto text-center mb-16 px-4">
-        <h2 className="text-4xl md:text-5xl font-semibold text-primary tracking-tight">
+  const resetTilt = (event) => {
+    event.currentTarget.style.transform = "";
+  };
+
+  return (
+    <section className="section-shell relative overflow-hidden">
+      <div className="section-glow right-[5%] top-[10%]" />
+
+      <div className="section-head">
+        <p data-reveal className="section-kicker">
+          Signature Work
+        </p>
+        <h2 data-reveal className="section-title" style={{ transitionDelay: "80ms" }}>
           Projects
         </h2>
-        <p className="mt-4 text-secondary max-w-xl mx-auto">
+        <p data-reveal className="section-copy" style={{ transitionDelay: "160ms" }}>
           A selection of projects showcasing my ability to build scalable, real-world applications.
         </p>
       </div>
 
-      {/* Cards */}
-      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
+      <div
+        data-reveal
+        className="mx-auto mb-8 flex max-w-6xl items-center justify-between gap-6 px-5 md:mb-10 md:px-6"
+        style={{ transitionDelay: "220ms" }}
+      >
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+        <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-secondary/[0.72]">
+          Selected Builds
+        </span>
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+      </div>
+
+      <div className="mx-auto grid max-w-6xl gap-8 px-5 md:px-6 lg:grid-cols-2 lg:grid-rows-[auto_auto]">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="group relative overflow-hidden rounded-2xl border border-black/10 bg-surface/60 backdrop-blur-md transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(0,0,0,0.15)]"
+            data-reveal
+            className={`project-card group ${
+              index === 0 ? "lg:col-span-2 lg:grid lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch" : ""
+            }`}
+            style={{ transitionDelay: `${index * 110}ms` }}
+            onMouseMove={handleTilt}
+            onMouseLeave={resetTilt}
           >
-            {/* Top Image */}
-            <div className="relative h-52 w-full overflow-hidden">
+            <div className={`relative overflow-hidden rounded-[26px] ${index === 0 ? "h-72 lg:h-full lg:min-h-[420px]" : "h-56"}`}>
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                className="h-full w-full object-cover object-top transition duration-700 ease-luxury group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.20)] via-transparent to-[rgba(255,255,255,0.08)] transition duration-500 group-hover:from-[rgba(10,10,10,0.28)]" />
+              <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-90 transition duration-500 group-hover:opacity-100`} />
+              <div className="absolute left-5 top-5 rounded-full border border-white/40 bg-white/[0.18] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-md">
+                {project.tag}
+              </div>
+              <div className="absolute bottom-5 left-5 flex items-center gap-3 text-white">
+                <span className="font-display text-4xl leading-none text-white/85">
+                  0{index + 1}
+                </span>
+                <div className="h-10 w-px bg-white/25" />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/78">
+                  Featured Project
+                </span>
+              </div>
             </div>
 
-            {/* Content */}
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-primary">
-                {project.title}
-              </h3>
+            <div className={`relative p-6 md:p-7 ${index === 0 ? "lg:flex lg:flex-col lg:justify-between lg:p-8" : ""}`}>
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent lg:hidden" />
+              <div>
+                <span className="text-[10px] font-semibold uppercase tracking-[0.26em] text-secondary/[0.7]">
+                  Case Study
+                </span>
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-primary md:text-[1.75rem]">
+                  {project.title}
+                </h3>
 
-              <p className="mt-3 text-secondary text-sm leading-relaxed">
-                {project.description}
-              </p>
+                <p className="mt-4 text-sm leading-7 text-secondary md:text-[0.95rem]">
+                  {project.description}
+                </p>
+              </div>
 
-              <div className="mt-4 flex flex-wrap gap-3">
-                {project.tech.map((tech, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-2 px-3 py-1 rounded-full bg-background border border-black/10 text-xs text-secondary"
+              <div className={`mt-6 ${index === 0 ? "lg:mt-8" : ""}`}>
+                <div className="mb-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-secondary/[0.66]">
+                  Built With
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {project.tech.map((tech, i) => (
+                    <div
+                      key={i}
+                      className="glass-chip"
+                    >
+                      <img src={tech.icon} alt={tech.name} className="w-4 h-4" />
+                      {tech.name}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className={`mt-8 flex items-center justify-between gap-4 border-t border-[rgba(139,94,60,0.12)] pt-5 ${index === 0 ? "lg:mt-10" : ""}`}>
+                <div className="h-px w-12 bg-gradient-to-r from-accent/55 to-transparent" />
+                <div className="flex gap-6">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-link"
                   >
-                    <img src={tech.icon} alt={tech.name} className="w-4 h-4" />
-                    {tech.name}
-                  </div>
-                ))}
-              </div>
+                    Live →
+                  </a>
 
-              <div className="mt-6 flex gap-4">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium text-primary/80 hover:text-accent transition"
-                >
-                  Live →
-                </a>
-
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium text-primary/80 hover:text-accent transition"
-                >
-                  GitHub →
-                </a>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-link"
+                  >
+                    GitHub →
+                  </a>
+                </div>
               </div>
             </div>
 
-            {/* Hover Glow */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-tr from-accent/5 via-transparent to-transparent pointer-events-none"></div>
+            <div className="pointer-events-none absolute inset-0 rounded-[30px] bg-gradient-to-br from-[rgba(181,144,103,0.10)] via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
           </div>
         ))}
       </div>

@@ -11,48 +11,41 @@ function Skills() {
   ];
 
   return (
-    <section className="relative h-[60vh] flex flex-col justify-center px-6 overflow-hidden bg-gradient-to-b from-background via-accentLight/30 to-accentLight/60">
-
-      {/* Top Blend */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-accentLight/60 via-accentLight/30 to-transparent z-10 pointer-events-none blur-[2px]"></div>
-
-      {/* Bottom Blend */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-accentLight/60 via-accentLight/30 to-transparent z-10 pointer-events-none blur-[2px]"></div>
-
-      {/* Glow */}
-      <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-accent/20 blur-[180px] rounded-full"></div>
+    <section className="section-shell relative overflow-hidden">
+      <div className="section-glow left-1/2 top-[12%] -translate-x-1/2" />
 
       <div className="relative z-20">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-primary">
+        <div className="section-head">
+          <p data-reveal className="section-kicker">
+            Technical Edge
+          </p>
+          <h2 data-reveal className="section-title" style={{ transitionDelay: "80ms" }}>
             Skills
           </h2>
-          <p className="mt-4 text-secondary/90 max-w-xl mx-auto">
+          <p data-reveal className="section-copy" style={{ transitionDelay: "160ms" }}>
             Technologies and tools I use to build modern, scalable and efficient applications.
           </p>
         </div>
 
-        {/* Scroll Row */}
-        <div className="max-w-6xl mx-auto overflow-hidden py-4">
+        <div data-reveal className="skills-marquee-shell mx-auto max-w-6xl px-5 py-4 md:px-6" style={{ transitionDelay: "220ms" }}>
           <div className="animate-scroll whitespace-nowrap gap-6">
-
             {[...skills, ...skills].map((skill, index) => (
               <div
                 key={index}
-                className="group inline-flex items-center gap-4 min-w-[180px] px-5 py-4 rounded-xl bg-surface/70 border border-accent/30 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(139,94,60,0.2)]"
+                className="group relative inline-flex min-w-[190px] items-center gap-4 rounded-2xl border border-[rgba(139,94,60,0.16)] bg-white/[0.72] px-5 py-4 text-sm text-primary shadow-soft backdrop-blur-xl transition-all duration-500 ease-luxury hover:-translate-y-2 hover:shadow-luxury"
               >
                 <img src={skill.logo} alt={skill.name} className="w-6 h-6" />
-                <span className="text-primary font-medium tracking-wide">
+                <span className="font-medium tracking-wide">
                   {skill.name}
                 </span>
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300 bg-accent/10"></div>
+                <div className="absolute inset-0 rounded-2xl opacity-0 transition duration-500 group-hover:opacity-100">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-accent/10 via-transparent to-accentLight/10" />
+                </div>
               </div>
             ))}
-
           </div>
         </div>
       </div>
-
     </section>
   );
 }

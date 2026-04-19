@@ -22,74 +22,70 @@ function About() {
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pb-16 md:pb-0 bg-gradient-to-br from-[#FAF7F2] via-[#EFE4D8] to-[#E2D0BE]">
+    <section className="section-shell relative overflow-hidden">
+      <div className="section-glow top-[8%] left-[8%]" />
 
-      {/* Premium Gradient Background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#FAFAFA] via-[#F6F1EC] to-[#E9DDCF]"></div>
-      <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-accent/20 blur-[180px] rounded-full"></div>
-
-      {/* Heading */}
-      <div className="w-full max-w-4xl mx-auto text-center pt-10 md:pt-16 mb-10 md:mb-14">
-        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-primary leading-tight">
+      <div className="section-head">
+        <p data-reveal className="section-kicker">
+          Crafted Foundations
+        </p>
+        <h2 data-reveal className="section-title" style={{ transitionDelay: "80ms" }}>
           About Me
         </h2>
-        <p className="mt-4 text-secondary text-base leading-relaxed max-w-xl mx-auto opacity-90">
+        <p data-reveal className="section-copy" style={{ transitionDelay: "160ms" }}>
           I build modern, scalable and performance-driven web applications with a strong focus on clean UI, system design and real-world impact.
         </p>
       </div>
 
-      {/* Layout */}
-      <div className="max-w-6xl mx-auto w-full grid md:grid-cols-3 gap-12 md:gap-16 items-center px-4 md:px-0">
-
-        {/* Left */}
-        <div className="flex flex-col gap-6 md:gap-8 order-2 md:order-1">
-
+      <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 md:grid-cols-3 md:gap-10 md:px-6">
+        <div className="order-2 flex flex-col gap-6 md:order-1">
           {items.slice(0, 2).map((item, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl bg-surface/70 border border-accent/30 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(139,94,60,0.2)]"
+              data-reveal
+              className="luxury-card p-6 md:p-7"
+              style={{ transitionDelay: `${120 + index * 80}ms` }}
             >
-              <h3 className="text-lg font-semibold text-primary tracking-tight leading-snug">
+              <h3 className="text-xl font-semibold tracking-tight text-primary">
                 {item.title}
               </h3>
-              <p className="mt-3 text-secondary leading-relaxed text-sm">
+              <p className="mt-3 text-sm leading-7 text-secondary">
                 {item.desc}
               </p>
             </div>
           ))}
         </div>
 
-        {/* Center Image */}
-        <div className="flex justify-center order-1 md:order-2 mt-2 md:mt-0">
-          <div className="relative group">
+        <div data-reveal className="order-1 flex justify-center md:order-2" style={{ transitionDelay: "220ms" }}>
+          <div className="portrait-frame group">
             <img
               src={myPhoto}
               alt="Hema Chandu"
-              className="w-72 h-96 md:w-80 md:h-[460px] object-cover object-top rounded-2xl shadow-[0_50px_120px_rgba(139,94,60,0.25)] transition duration-500 group-hover:scale-[1.04]"
+              className="h-96 w-72 rounded-[28px] object-cover object-top transition duration-700 ease-luxury group-hover:scale-[1.05] md:h-[460px] md:w-80"
             />
-            <div className="absolute inset-0 rounded-2xl border border-white/30 pointer-events-none"></div>
+            <div className="pointer-events-none absolute inset-0 rounded-[28px] border border-white/[0.45]" />
+            <div className="pointer-events-none absolute inset-0 rounded-[28px] bg-gradient-to-t from-[rgba(10,10,10,0.10)] via-transparent to-[rgba(255,255,255,0.12)] opacity-80" />
           </div>
         </div>
 
-        {/* Right */}
-        <div className="flex flex-col gap-6 md:gap-8 order-3">
+        <div className="order-3 flex flex-col gap-6">
           {items.slice(2, 4).map((item, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl bg-surface/70 border border-accent/30 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(139,94,60,0.2)]"
+              data-reveal
+              className="luxury-card p-6 md:p-7"
+              style={{ transitionDelay: `${260 + index * 80}ms` }}
             >
-              <h3 className="text-lg font-semibold text-primary tracking-tight leading-snug">
+              <h3 className="text-xl font-semibold tracking-tight text-primary">
                 {item.title}
               </h3>
-              <p className="mt-3 text-secondary leading-relaxed text-sm">
+              <p className="mt-3 text-sm leading-7 text-secondary">
                 {item.desc}
               </p>
             </div>
           ))}
         </div>
-
       </div>
-
     </section>
   );
 }

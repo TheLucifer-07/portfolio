@@ -1,100 +1,159 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const navItems = [
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" },
+];
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const handleClose = () => setIsOpen(false);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => document.getElementById(item.id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntries = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleEntries[0]?.target?.id) {
+          setActiveSection(visibleEntries[0].target.id);
+        }
+      },
+      {
+        threshold: [0.2, 0.35, 0.5, 0.7],
+        rootMargin: "-18% 0px -45% 0px",
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <nav className="w-full fixed top-0 left-0 z-50 md:bg-white/40 bg-transparent md:backdrop-blur-xl backdrop-blur-none md:border-b border-white/20 shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
-      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-        
-        {/* Logo */}
-        <Link to="/" className="text-lg font-semibold tracking-[0.15em] text-primary hover:text-accent transition">
+    <nav
+      className={`fixed left-0 top-0 z-50 w-full transition-all duration-500 ease-luxury ${
+        scrolled
+          ? "py-3"
+          : "py-5"
+      }`}
+    >
+      <div
+        className={`mx-auto flex w-[min(1120px,calc(100%-24px))] items-center justify-between rounded-full px-5 md:px-7 transition-all duration-500 ease-luxury ${
+          scrolled
+            ? "border border-[rgba(139,94,60,0.12)] bg-white/[0.72] shadow-soft backdrop-blur-2xl"
+            : "border border-transparent bg-white/[0]"
+        }`}
+      >
+        <Link
+          to="/"
+          className="py-4 font-display text-2xl font-semibold tracking-[0.16em] text-primary transition duration-300 hover:text-accent"
+        >
           Chandu
         </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-10 text-sm tracking-wide">
-          <a href="#about" className="hover:text-accent transition">
-            About
-          </a>
-          <a href="#skills" className="hover:text-accent transition">
-            Skills
-          </a>
-          <a href="#projects" className="hover:text-accent transition">
-            Projects
-          </a>
-          <a href="#contact" className="hover:text-accent transition">
-            Contact
-          </a>
+        <div className="hidden items-center gap-8 text-[11px] font-semibold uppercase tracking-[0.22em] text-secondary md:flex">
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={`nav-link ${activeSection === item.id ? "is-active" : ""}`}
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
 
-        {/* Resume Button */}
         <div className="hidden md:block">
           <a
             href="/Hema_Chandu_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 rounded-full border border-primary/20 text-sm tracking-wide transition-all duration-300 hover:bg-accent hover:text-white hover:border-accent"
+            className="btn-ghost px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.22em]"
           >
             View Resume
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-2xl"
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-[rgba(139,94,60,0.12)] bg-white/[0.7] text-primary shadow-soft backdrop-blur-xl transition duration-300 hover:scale-[1.04] hover:border-accent/30 hover:text-accent md:hidden"
           onClick={() => setIsOpen(true)}
+          aria-label="Open navigation menu"
         >
-          ☰
+          <span className="space-y-1.5">
+            <span className="block h-px w-5 bg-current" />
+            <span className="block h-px w-5 bg-current" />
+          </span>
         </button>
       </div>
 
-      {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black/20 backdrop-blur-md transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-[rgba(10,10,10,0.14)] backdrop-blur-xl transition-all duration-500 ease-luxury ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         onClick={handleClose}
       />
 
-      {/* Mobile Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white/90 backdrop-blur-2xl shadow-2xl border-l border-black/5 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed right-0 top-0 flex h-full w-[min(320px,88vw)] flex-col border-l border-[rgba(139,94,60,0.12)] bg-white/[0.82] shadow-[0_30px_80px_rgba(10,10,10,0.12)] backdrop-blur-3xl transition-transform duration-500 ease-luxury ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex justify-end items-center px-6 py-5 border-b border-black/5">
+        <div className="flex items-center justify-between border-b border-[rgba(139,94,60,0.1)] px-6 py-6">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-secondary">
+            Navigation
+          </span>
           <button
             onClick={handleClose}
-            className="text-sm font-medium tracking-wide hover:text-accent transition"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(139,94,60,0.14)] text-primary transition duration-300 hover:rotate-90 hover:border-accent/30 hover:text-accent"
+            aria-label="Close navigation menu"
           >
-            close ✕
+            <span className="text-xl leading-none">×</span>
           </button>
         </div>
 
-        <div className="flex flex-col gap-6 px-6 py-8 text-sm tracking-wide">
-          <a href="#about" onClick={handleClose} className="hover:text-accent transition">
-            About
-          </a>
-          <a href="#skills" onClick={handleClose} className="hover:text-accent transition">
-            Skills
-          </a>
-          <a href="#projects" onClick={handleClose} className="hover:text-accent transition">
-            Projects
-          </a>
-          <a href="#contact" onClick={handleClose} className="hover:text-accent transition">
-            Contact
-          </a>
+        <div className="flex flex-1 flex-col gap-2 px-6 py-8">
+          {navItems.map((item, index) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={handleClose}
+              className={`mobile-nav-link ${activeSection === item.id ? "is-active" : ""}`}
+              style={{
+                opacity: isOpen ? 1 : 0,
+                transform: isOpen ? "translateX(0)" : "translateX(18px)",
+                transitionDelay: isOpen ? `${120 + index * 55}ms` : "0ms",
+              }}
+            >
+              {item.label}
+            </a>
+          ))}
 
           <a
             href="/Hema_Chandu_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleClose}
-            className="mt-4 px-6 py-3 rounded-full border border-primary/20 text-center transition-all duration-300 hover:bg-accent hover:text-white hover:border-accent"
+            className="btn-luxury mt-6 px-6 py-4 text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-white"
           >
             View Resume
           </a>
