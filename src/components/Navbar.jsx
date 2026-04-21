@@ -24,29 +24,47 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = navItems
-      .map((item) => document.getElementById(item.id))
-      .filter(Boolean);
+    let frameId;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntries = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+    const updateActiveSection = () => {
+      const sections = navItems
+        .map((item) => document.getElementById(item.id))
+        .filter(Boolean);
 
-        if (visibleEntries[0]?.target?.id) {
-          setActiveSection(visibleEntries[0].target.id);
-        }
-      },
-      {
-        threshold: [0.2, 0.35, 0.5, 0.7],
-        rootMargin: "-18% 0px -45% 0px",
-      }
-    );
+      if (!sections.length) return;
 
-    sections.forEach((section) => observer.observe(section));
+      const navOffset = 140;
+      const scrollPosition = window.scrollY + navOffset;
+      const pageBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 4;
 
-    return () => observer.disconnect();
+      const currentSection = pageBottom
+        ? sections[sections.length - 1]
+        : sections
+            .slice()
+            .reverse()
+            .find((section) => section.offsetTop <= scrollPosition);
+
+      setActiveSection(currentSection?.id || "");
+    };
+
+    const requestUpdate = () => {
+      cancelAnimationFrame(frameId);
+      frameId = requestAnimationFrame(updateActiveSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    window.addEventListener("hashchange", requestUpdate);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+      window.removeEventListener("hashchange", requestUpdate);
+    };
   }, []);
 
   return (

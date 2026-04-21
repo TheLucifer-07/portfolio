@@ -76,9 +76,8 @@ function Footer() {
         </div>
 
         <div className="h-px w-32 bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
-
-        <p className="text-center text-sm text-primary/70">
-          © {new Date().getFullYear()} Chandu. All rights reserved.
+        <p className="text-center text-sm text-primary/70 font-mono">
+           © {new Date().getFullYear()} Chandu.dev — Built with ❤️ & lots of ☕ • All rights reserved
         </p>
       </div>
     </footer>
