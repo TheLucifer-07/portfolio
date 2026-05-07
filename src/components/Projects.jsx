@@ -1,28 +1,29 @@
 import aqiImg from "../assets/aqi.png";
 import edunexesImg from "../assets/edunexes.png";
-import shopeasyImg from "../assets/shopeasy.png";
+import tracerImg from "../assets/tracer.png";
 
 const projects = [
   {
-    title: "AQI Predictor",
+    title: "TRACER",
     description:
-      "AI-powered air quality prediction platform using ML models, real-time APIs, and interactive dashboards.",
-    tag: "Full Stack • ML",
-    link: "https://aqi-predictor-07.vercel.app",
-    github: "https://github.com/TheLucifer-07/AQI-Predictor",
-    image: aqiImg,
+      "AI-powered behavioral tracking platform with responsive React interfaces, analytics workflows, and modern UI systems.",
+    tag: "Full Stack • AI",
+    link: "https://tracer-07.vercel.app",
+    github: "https://github.com/TheLucifer-07/TRACER",
+    image: tracerImg,
     tech: [
       { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
       { name: "Node", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-      { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
     ],
-    accent: "from-[rgba(139,94,60,0.12)] via-[rgba(181,144,103,0.08)] to-transparent",
+    accent: "from-[rgba(181,144,103,0.12)] via-[rgba(139,94,60,0.08)] to-transparent",
   },
+
   {
     title: "EduNexes",
     description:
       "AI-powered student productivity system with chat, notes generation, resume analysis, and task tracking.",
-    tag: "Full Stack",
+    tag: "Full Stack • AI",
     link: "https://edu-nexes.vercel.app",
     github: "https://github.com/TheLucifer-07/EduNexes",
     image: edunexesImg,
@@ -33,20 +34,21 @@ const projects = [
     ],
     accent: "from-[rgba(181,144,103,0.12)] via-[rgba(139,94,60,0.08)] to-transparent",
   },
+
   {
-    title: "ShopEasy",
+    title: "AQI Predictor",
     description:
-      "Responsive e-commerce UI built using HTML and Tailwind during early learning phase.",
-    tag: "Frontend",
-    link: "https://shopeasy-07.vercel.app",
-    github: "https://github.com/TheLucifer-07/shopeasy",
-    image: shopeasyImg,
+      "Real-time AQI monitoring platform with responsive dashboards, ML-powered forecasting, and data visualization systems.",
+    tag: "Frontend • ML",
+    link: "https://aqi-predictor-07.vercel.app",
+    github: "https://github.com/TheLucifer-07/AQI-Predictor",
+    image: aqiImg,
     tech: [
-      { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-      { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-      { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+      { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "Node", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
     ],
-    accent: "from-[rgba(181,144,103,0.10)] via-[rgba(139,94,60,0.06)] to-transparent",
+    accent: "from-[rgba(139,94,60,0.12)] via-[rgba(181,144,103,0.08)] to-transparent",
   },
 ];
 
@@ -107,7 +109,7 @@ function Projects() {
               <img
                 src={project.image}
                 alt={project.title}
-                className="h-full w-full object-cover object-top transition duration-700 ease-luxury group-hover:scale-110"
+                className="h-full w-full object-top transition duration-700 ease-luxury group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.20)] via-transparent to-[rgba(255,255,255,0.08)] transition duration-500 group-hover:from-[rgba(10,10,10,0.28)]" />
               <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-90 transition duration-500 group-hover:opacity-100`} />
