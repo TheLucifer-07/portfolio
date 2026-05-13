@@ -9,7 +9,7 @@ const projects = [
       "AI-powered behavioral tracking platform with responsive React interfaces, analytics workflows, and modern UI systems.",
     tag: "Full Stack • AI",
     link: "https://tracer-07.vercel.app",
-    github: "https://github.com/chanduforge/Tracer",
+    github: "https://github.com/TheLucifer-07/Tracer",
     image: tracerImg,
     tech: [
       { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -25,7 +25,7 @@ const projects = [
       "AI-powered student productivity system with chat, notes generation, resume analysis, and task tracking.",
     tag: "Full Stack • AI",
     link: "https://edu-nexes.vercel.app",
-    github: "https://github.com/chanduforge/EduNexes",
+    github: "https://github.com/TheLucifer-07/EduNexes",
     image: edunexesImg,
     tech: [
       { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -41,7 +41,7 @@ const projects = [
       "Real-time AQI monitoring platform with responsive dashboards, ML-powered forecasting, and data visualization systems.",
     tag: "Frontend • ML",
     link: "https://aqi-predictor-07.vercel.app",
-    github: "https://github.com/chanduforge/AQI-Predictor",
+    github: "https://github.com/TheLucifer-07/AQI-Predictor",
     image: aqiImg,
     tech: [
       { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
