@@ -1,7 +1,7 @@
 function Hero() {
   const socials = [
     {
-      href: "https://github.com/TheLucifer-07",
+      href: "https://github.com/chanduforge",
       type: "image",
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
       label: "GitHub",

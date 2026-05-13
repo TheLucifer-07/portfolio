@@ -2,7 +2,7 @@ function Footer() {
   const socials = [
     {
       name: "GitHub",
-      link: "https://github.com/TheLucifer-07",
+      link: "https://github.com/chanduforge",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
     },
     {
