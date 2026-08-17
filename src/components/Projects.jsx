@@ -1,25 +1,9 @@
-import aqiImg from "../assets/aqi.png";
+import relayImg from "../assets/relayImg.png";
 import edunexesImg from "../assets/edunexes.png";
 import tracerImg from "../assets/tracer.png";
 
 const projects = [
-  {
-    title: "TRACER",
-    description:
-      "AI-powered behavioral tracking platform with responsive React interfaces, analytics workflows, and modern UI systems.",
-    tag: "Full Stack • AI",
-    link: "https://tracer-07.vercel.app",
-    github: "https://github.com/TheLucifer-07/Tracer",
-    image: tracerImg,
-    tech: [
-      { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-      { name: "Node", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-      { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-    ],
-    accent: "from-[rgba(181,144,103,0.12)] via-[rgba(139,94,60,0.08)] to-transparent",
-  },
-
-  {
+    {
     title: "EduNexes",
     description:
       "AI-powered student productivity system with chat, notes generation, resume analysis, and task tracking.",
@@ -33,23 +17,48 @@ const projects = [
       { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
     ],
     accent: "from-[rgba(181,144,103,0.12)] via-[rgba(139,94,60,0.08)] to-transparent",
-  },
-
-  {
-    title: "AQI Predictor",
+    },
+    {
+    title: "TRACER",
     description:
-      "Real-time AQI monitoring platform with responsive dashboards, ML-powered forecasting, and data visualization systems.",
-    tag: "Frontend • ML",
-    link: "https://aqi-predictor-07.vercel.app",
-    github: "https://github.com/TheLucifer-07/AQI-Predictor",
-    image: aqiImg,
+      "AI-powered behavioral tracking platform with responsive React interfaces, analytics workflows, and modern UI systems.",
+    tag: "Full Stack • AI",
+    link: "https://tracer-07.vercel.app",
+    github: "https://github.com/TheLucifer-07/Tracer",
+    image: tracerImg,
     tech: [
       { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
       { name: "Node", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-      { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
     ],
-    accent: "from-[rgba(139,94,60,0.12)] via-[rgba(181,144,103,0.08)] to-transparent",
-  },
+    accent: "from-[rgba(181,144,103,0.12)] via-[rgba(139,94,60,0.08)] to-transparent",
+    },
+
+    {
+      title: "Relay",
+      description:
+        "AI-powered resource-sharing platform for discovering, exchanging, and donating unused resources through intelligent matching, real-time negotiation, and location-based discovery.",
+      tag: "Full Stack • AI",
+      link: "https://relay-community-one.vercel.app",
+      github: "https://github.com/TheLucifer-07/Relay",
+      image: relayImg,
+      tech: [
+      {
+      name: "React",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      },
+      {
+      name: "Node",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      },
+      {
+      name: "MongoDB",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      },
+    ],
+    accent:
+      "from-[rgba(139,94,60,0.12)] via-[rgba(181,144,103,0.08)] to-transparent",
+    },
 ];
 
 function Projects() {
